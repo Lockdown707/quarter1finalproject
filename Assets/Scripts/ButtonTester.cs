@@ -13,19 +13,19 @@ public class ButtonTester : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        /* if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("You pressed P");
         }
 
-        if(Input.GetButtonDown("Shoot"))
+        //if(Input.GetButtonDown("Shoot"))
         {
             Debug.Log("You Pressed Shoot");
         }
 
-        if (Input.GetButtonDown("Jump"))
+        //if (Input.GetButtonDown("Jump"))
         {
             Debug.Log("You Pressed Jump");
-        }
+        }*/
     }
 }
