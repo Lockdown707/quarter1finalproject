@@ -10,10 +10,18 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public float speed;
 
+    public GameObject rightSpawn;
+    public GameObject leftSpawn;
+    public GameObject laserSpawn;
+
+
+    public GameObject laserPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        laserSpawn = rightSpawn;
     }
 
     // Update is called once per frame
@@ -28,6 +36,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+        }
+
+        //Shooting
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(laserPrefab,laserSpawn.transform.position, laserSpawn.transform.rotation);
         }
 
     }
