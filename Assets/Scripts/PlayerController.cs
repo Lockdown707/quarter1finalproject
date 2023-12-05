@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
     public GameObject leftSpawn;
     public GameObject laserSpawn;
 
-
     public GameObject laserPrefab;
+
+    public ParticleSystem deathParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +49,17 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isOnGround = true;
+        
+        //Destroy Player
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+            deathParticle.Play();
+            Destroy(gameObject);
+            
+        }
+
+        //Particle Death
+
     }
+
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1747176261}
   - component: {fileID: 1747176260}
   - component: {fileID: 1747176263}
+  - component: {fileID: 446739947}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.8210258, z: 4.519942}
-  m_Center: {x: 0, y: 1.9369602, z: -0.11869025}
+  m_Size: {x: 1, y: 9.170143, z: 4.519942}
+  m_Center: {x: 0, y: 4.1529274, z: -0.11869025}
 --- !u!114 &1747176263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 4868928029211152115}
   defaultRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &446739947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747176258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3905377d01932234aad3da42927882ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4868928029211152115
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,9 +139,10 @@ GameObject:
   - component: {fileID: 4868928029211152118}
   - component: {fileID: 4868928029211152117}
   - component: {fileID: 4868928029211152116}
+  - component: {fileID: 665328445}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,3 +255,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &665328445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868928029211152115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3905377d01932234aad3da42927882ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
