@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem deathParticle;
 
+    public GameObject model;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,16 @@ public class PlayerController : MonoBehaviour
         if(horizontalInput > 0)
         {
             laserSpawn = rightSpawn;
+        }
+
+        //Rotate Model
+        if (horizontalInput < 0)
+        {
+            model.transform.forward = Vector3.right;
+        }
+        if (horizontalInput > 0)
+        {
+            model.transform.forward = Vector3.left;
         }
 
 

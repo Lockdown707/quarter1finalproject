@@ -7844,6 +7844,7 @@ MonoBehaviour:
   laserSpawn: {fileID: 0}
   laserPrefab: {fileID: 7608731382348204541, guid: 3ba71a18ac5c1494f8520fc3bef9a177, type: 3}
   deathParticle: {fileID: 604043486}
+  model: {fileID: 919132149034085728}
 --- !u!4 &1742474766
 Transform:
   m_ObjectHideFlags: 0
