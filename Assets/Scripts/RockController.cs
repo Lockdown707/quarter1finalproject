@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RockController : MonoBehaviour
 {
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,9 @@ public class RockController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            gameManager.UpdateScore(2);
             Destroy(gameObject);
+            
         }
     }
 
@@ -27,7 +30,9 @@ public class RockController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Laser"))
         {
+            gameManager.UpdateScore(1);
             Destroy(gameObject);
+            
         }
     }
 }

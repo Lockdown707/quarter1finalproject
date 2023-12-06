@@ -28,6 +28,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Switch Laser
+        if(horizontalInput < 0)
+        {
+            laserSpawn = leftSpawn;
+        }
+        if(horizontalInput > 0)
+        {
+            laserSpawn = rightSpawn;
+        }
+
+
         // Move Forward
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * Time.deltaTime * horizontalInput * speed);
@@ -59,7 +70,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Particle Death
-
+        
     }
 
 }
