@@ -8,11 +8,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject obstaclePrefab;
     public float startDelay = 2;
     public float repeatRate = 2;
+    public bool isSpawning;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        isSpawning = true;
     }
 
     // Update is called once per frame
@@ -22,6 +24,18 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnObstacle ()
     {
-        Instantiate(obstaclePrefab, transform.position, transform.rotation);
+        if (isSpawning)
+        {
+            Instantiate(obstaclePrefab, transform.position, transform.rotation);
+        }
     }
+
+    /*IEnumerator Spawn()
+    {
+        while (true)
+        {
+            yield return new WaitforSeconds(2);
+        }
+        yield return new WaitForSeconds(repeatRate);
+    }*/
 }
