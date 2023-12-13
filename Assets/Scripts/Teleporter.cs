@@ -5,6 +5,8 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     public GameObject destination;
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class Teleporter : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.transform.position = destination.transform.position;
+            gameManager.NextLevel();
 
         }
     }

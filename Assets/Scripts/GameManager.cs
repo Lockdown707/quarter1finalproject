@@ -50,4 +50,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void NextLevel()
+    {
+        spawner.ChangeSpeed();
+        spawnerTop.ChangeSpeed();
+    }
+
 }

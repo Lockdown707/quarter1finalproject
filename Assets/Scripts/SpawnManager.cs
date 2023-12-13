@@ -6,36 +6,37 @@ public class SpawnManager : MonoBehaviour
 {
 
     public GameObject obstaclePrefab;
-    public float startDelay = 2;
-    public float repeatRate = 2;
+    public float startDelay = 2f;
+    public float repeatRate = 2f;
+    public float decayRate = 0.8f;
     public bool isSpawning;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
         isSpawning = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    void SpawnObstacle ()
-    {
         if (isSpawning)
         {
             Instantiate(obstaclePrefab, transform.position, transform.rotation);
+            isSpawning=false;
+            StartCoroutine(SpawnDelay());
         }
     }
+    
 
-    /*IEnumerator Spawn()
+    IEnumerator SpawnDelay()
     {
-        while (true)
-        {
-            yield return new WaitforSeconds(2);
-        }
         yield return new WaitForSeconds(repeatRate);
-    }*/
+        isSpawning=true;
+    }
+
+    public void ChangeSpeed()
+    {
+        repeatRate *= decayRate;
+    }
 }
