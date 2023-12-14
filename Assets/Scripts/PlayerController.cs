@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public GameObject rightSpawn;
     public GameObject leftSpawn;
     public GameObject laserSpawn;
+    public bool canShoot;
+    public float fireRate = 0.1f;
     public GameManager gameManager;
 
     public GameObject laserPrefab;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
         laserSpawn = rightSpawn;
         animator =model.GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
+        canShoot = true;
         
     }
 
@@ -82,9 +85,11 @@ public class PlayerController : MonoBehaviour
             }
 
             //Shooting
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && canShoot)
             {
                 Instantiate(laserPrefab, laserSpawn.transform.position, laserSpawn.transform.rotation);
+                canShoot = false;
+                StartCoroutine(ShootDelay());
             }
 
         }
@@ -108,6 +113,12 @@ public class PlayerController : MonoBehaviour
 
         //Particle Death
         
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(fireRate);
+        canShoot = true;
     }
 
 }

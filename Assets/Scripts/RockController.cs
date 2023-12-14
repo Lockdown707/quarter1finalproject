@@ -32,6 +32,7 @@ public class RockController : MonoBehaviour
         {
             gameManager.UpdateScore(1);
             Destroy(gameObject);
+            Destroy(other.gameObject);
             
         }
     }

@@ -6604,6 +6604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 662708656}
+  gameManager: {fileID: 1924170892}
 --- !u!54 &906747508
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6691,7 +6692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906747506}
   m_LocalRotation: {x: -0, y: -0, z: -0.07757585, w: 0.9969865}
-  m_LocalPosition: {x: -18.77, y: 84.31, z: -0.9378}
+  m_LocalPosition: {x: -17.34, y: 83.81, z: -0.9378}
   m_LocalScale: {x: 1, y: 0.79428434, z: 4.4595904}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7810,6 +7811,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 4868928029211152115, guid: bf5fef05ed109a146b10c1064ff1b185, type: 3}
   startDelay: 2
   repeatRate: 10
+  decayRate: 0.8
   isSpawning: 0
 --- !u!4 &1510212233
 Transform:
@@ -8370,6 +8372,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 4868928029211152115, guid: bf5fef05ed109a146b10c1064ff1b185, type: 3}
   startDelay: 2
   repeatRate: 10
+  decayRate: 0.8
   isSpawning: 0
 --- !u!1 &1742474764
 GameObject:
@@ -8410,6 +8413,8 @@ MonoBehaviour:
   rightSpawn: {fileID: 1333061864}
   leftSpawn: {fileID: 199644088}
   laserSpawn: {fileID: 0}
+  canShoot: 0
+  fireRate: 0.5
   gameManager: {fileID: 1924170892}
   laserPrefab: {fileID: 7608731382348204541, guid: 3ba71a18ac5c1494f8520fc3bef9a177, type: 3}
   deathParticle: {fileID: 604043486}
@@ -8898,7 +8903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 522492761}
-  highScoreDisplayText: {fileID: 0}
+  highScoreDisplayText: {fileID: 1531934886}
   gameOverText: {fileID: 1209904745}
   spawner: {fileID: 1734289248}
   spawnerTop: {fileID: 1510212232}
